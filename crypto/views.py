@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.http import HttpResponseForbidden, HttpResponse, JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 
-# Create your views here.
+
+def crypto(request):
+    return render(request, 'crypto/crypto.html')
