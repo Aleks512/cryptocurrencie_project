@@ -1,13 +1,11 @@
-# Dans votre fichier forms.py
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.utils.translation import gettext as _
-
+from django.utils.translation import gettext_lazy as _
 from .models import CustomUser
+from .models import Profile
 
 class CustomUserCreationForm(UserCreationForm):
-    birth_date = forms.DateField(label=_("Date de naissance"))
+    birth_date = forms.DateField(label=_("Date de naissance"), widget=forms.DateInput(attrs={'type': 'date'}))
 
     class Meta:
         model = CustomUser
@@ -20,3 +18,9 @@ class CustomUserCreationForm(UserCreationForm):
         widgets = {
             'birth_date': forms.DateInput(attrs={'type': 'date'}),
         }
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['photo']

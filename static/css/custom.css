@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap');
+
+:root {
+    --primary-color: #009042;
+    --primary2-color: #0D9C43;
+    --primary3-color: #1AA845;
+    --primary4-color: #27b547;
+    --primary5-color: springgreen;
+    --customblack-color: #000000;
+  --secondary-color: #777;
+  --background-color: white;
+
+  --custom-button-bg: #009042;
+  --custom-button-text: #000000;
+  --custom-button-hover-bg: #000000;
+  --custom-button-hover-text: #009042;
+  /* Ajoutez d'autres variables de couleur selon vos besoins */
+}
+
+
