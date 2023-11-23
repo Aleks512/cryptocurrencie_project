@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crypto',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Dans votre fichier settings.py
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
