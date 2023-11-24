@@ -18,9 +18,18 @@ class CustomUserCreationForm(UserCreationForm):
         widgets = {
             'birth_date': forms.DateInput(attrs={'type': 'date'}),
         }
-
+        
+        def save(self, commit=True):
+            user = super().save(commit=False)
+            user.username = None  # Utilisez le champ email comme nom d'utilisateur
+            if commit:
+                user.save()
+            return user
 
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['photo']
+
+class ConfirmDeleteForm(forms.Form):
+    confirmation = forms.BooleanField(label='Je confirme la suppression de mon compte', required=True)

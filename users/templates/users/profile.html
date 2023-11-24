@@ -6,7 +6,7 @@
     
     <div class="row mt-4">
       <div class="col-md-4">
-        <img src="{{ user_profile.photo.url }}" alt="Profile Photo" class="img-fluid rounded">
+        <img src="{{ user_profile.imageURL }}" alt="Profile Photo" class="img-fluid rounded">
         <form method="post" enctype="multipart/form-data">
           {% csrf_token %}
           {{ form }}
@@ -21,7 +21,7 @@
         <!-- Ajoutez d'autres informations ici -->
         
         <!-- Lien pour supprimer le compte -->
-        <a href="{% url 'delete_account' %}" class="btn btn-danger">Supprimer le compte</a>
+        <a href="{% url 'delete-account' %}" class="btn btn-danger">Supprimer le compte</a>
       </div>
     </div>
   </div>
